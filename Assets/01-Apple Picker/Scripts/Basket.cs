@@ -8,13 +8,14 @@ public class Basket : MonoBehaviour
     [Header("Set Dynamically")]
     public Text scoreGT;
 
-    // Start is called before the first frame update
     void Start()
     {
         // Find a reference to the ScoreCounter GameObject
         GameObject scoreGO = GameObject.Find("ScoreCounter");
+
         // Get the Text Component of that GameObject
         scoreGT = scoreGO.GetComponent<Text>();
+
         // Set the starting number of points to 0
         scoreGT.text = "0";
     }

@@ -184,7 +184,7 @@ MonoBehaviour:
   applePrefab: {fileID: 0}
   speed: 1
   leftAndRightEdge: 10
-  chancetoChangeDirections: 0.1
+  chanceToChangeDirections: 0.1
   secondsBetweenAppleDrops: 1
 --- !u!1 &7021935282808027866
 GameObject:
