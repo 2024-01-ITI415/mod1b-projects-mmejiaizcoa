@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Apple : MonoBehaviour
-{
+    [Header("Set in Inspector")]
     public static float bottomY = -20f;
 
     // Start is called before the first frame update
@@ -19,5 +19,11 @@ public class Apple : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+
+    // Get a reference to the ApplePicker component of Main Camera.
+    ApplePicker apScript = Camera.main.GetComponenet<ApplePicker>();
+
+    // Call the public AppleDestroyed() methid of apScript 
+    apScript.AppleDestroyed();
     }
 }
