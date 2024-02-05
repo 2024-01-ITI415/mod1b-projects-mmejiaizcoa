@@ -48,11 +48,12 @@ public class AppleTree : MonoBehaviour
     }
     
     void FixedUpdate()
-        // Changing Direction Randomly is now time-based because of FixedUpdate()
     {
-          else if (Random.value < chancetoChangeDirections)
+        // Changing Direction Randomly is now time-based because of FixedUpdate()
+          if (Random.value < chancetoChangeDirections)
         {
             speed *= -1;
         }
     }
 }
+
