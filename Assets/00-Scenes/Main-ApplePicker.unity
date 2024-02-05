@@ -366,12 +366,20 @@ PrefabInstance:
       value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 6340953152903716781, guid: 44338639b6ed4f84780f0a6aeeb16f9e, type: 3}
+      propertyPath: applePrefab
+      value: 
+      objectReference: {fileID: 3749953065945393803, guid: 470a5440a8d5273438c40b9e991f0c06, type: 3}
+    - target: {fileID: 6340953152903716781, guid: 44338639b6ed4f84780f0a6aeeb16f9e, type: 3}
       propertyPath: leftAndRightEdge
       value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 6340953152903716781, guid: 44338639b6ed4f84780f0a6aeeb16f9e, type: 3}
       propertyPath: chancetoChangeDirections
       value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 8315126532280508880, guid: 44338639b6ed4f84780f0a6aeeb16f9e, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
