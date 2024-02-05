@@ -8,6 +8,7 @@ public class Basket : MonoBehaviour
     [Header("Set Dynamically")]
     public Text scoreGT;
 
+    // Start is called before the first frame update
     void Start()
     {
         // Find a reference to the ScoreCounter GameObject

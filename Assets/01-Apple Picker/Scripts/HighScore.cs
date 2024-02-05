@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI; // We need this line for uGUI to work.
+using UnityEngine.UI;
 
 public class HighScore : MonoBehaviour
 {
@@ -12,15 +12,21 @@ public class HighScore : MonoBehaviour
         // If the PlayerPrefs HighScore already exists, read it
         if (PlayerPrefs.HasKey("HighScore"))
         {
-            PlayerPrefs.GetInt("HighScore, score");
+            score = PlayerPrefs.GetInt("HighScore");
         }
         // Assign the high score to HighScore
-        score = PlayerPrefs.SetInt("HighScore", score);
+        PlayerPrefs.SetInt("HighScore", score);
     }
-  
+    // Start is called before the first frame update
+    void Start()
+    {
+
+    }
+
     // Update is called once per frame
     void Update()
     {
+
         Text gt = this.GetComponent<Text>();
         gt.text = "High Score: " + score;
 
