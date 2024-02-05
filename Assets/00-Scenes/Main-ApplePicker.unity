@@ -323,7 +323,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1648916821567100371, guid: 44338639b6ed4f84780f0a6aeeb16f9e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 10
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 1648916821567100371, guid: 44338639b6ed4f84780f0a6aeeb16f9e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -360,6 +360,10 @@ PrefabInstance:
     - target: {fileID: 2681468295827433474, guid: 44338639b6ed4f84780f0a6aeeb16f9e, type: 3}
       propertyPath: m_Name
       value: AppleTree
+      objectReference: {fileID: 0}
+    - target: {fileID: 6340953152903716781, guid: 44338639b6ed4f84780f0a6aeeb16f9e, type: 3}
+      propertyPath: leftAndRightEdge
+      value: 25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
