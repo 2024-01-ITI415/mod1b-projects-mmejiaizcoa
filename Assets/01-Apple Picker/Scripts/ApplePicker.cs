@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class ApplePicker : MonoBehaviour
 {
-    [Header("Set an Inspector")]
+    [Header("Set in Inspector")]
     public GameObject basketPrefab;
     public int numBaskets = 3;
     public float basketBottomY = -14f;
@@ -16,7 +16,7 @@ public class ApplePicker : MonoBehaviour
     void Start()
     {
         basketList = new List<GameObject>();
-        for (int i=0; i<numBaskets; i++)
+        for (int i = 0; i < numBaskets; i++)
         {
             GameObject tBasketGO = Instantiate<GameObject>(basketPrefab);
             Vector3 pos = Vector3.zero;
@@ -28,28 +28,28 @@ public class ApplePicker : MonoBehaviour
 
     public void AppleDestroyed()
     {
-        // Destroy all of the falling apples 
+        // Destory all of the falling apples
         GameObject[] tAppleArray = GameObject.FindGameObjectsWithTag("Apple");
         foreach (GameObject tGO in tAppleArray)
         {
-            Destroyed(tGo);
+            Destroy(tGO);
         }
 
         // Destroy one of the baskets
-        // Get the index of the last Basket in basketList 
+        // Get the index of the last Basket in basketList
         int basketIndex = basketList.Count - 1;
 
-        // Get a reference to that Basket GameObject 
-        GameObject tBasketGo = basketList[basketIndex];
+        // Get a reference to that Basket GameObject
+        GameObject tBasketGO = basketList[basketIndex];
 
         // Remove the Basket from the list and destroy the GameObject
         basketList.RemoveAt(basketIndex);
-
-        AppleDestroyed(tBasketGo);
+        Destroy(tBasketGO);
     }
+
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

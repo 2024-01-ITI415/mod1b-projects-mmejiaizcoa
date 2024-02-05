@@ -4,21 +4,21 @@ using UnityEngine;
 
 public class AppleTree : MonoBehaviour
 {
-    [Header("Set an Inspector")]
+    [Header("Set in Inspector")]
 
-    // Prefab for instantating apples
+    // Prefab for instantiating apples
     public GameObject applePrefab;
 
     // Speed at which the AppleTree moves
     public float speed = 1f;
 
-    // Distance where AppleTree turns around 
+    // Distance where AppleTree turns around
     public float leftAndRightEdge = 10f;
 
-    // Chance that the AppleTree will change directions 
-    public float chancetoChangeDirections = 0.1f;
+    // Chance that the AppleTree will change directions
+    public float chanceToChangeDirections = 0.1f;
 
-    // The rate at which Apples will be instantiated 
+    // Rate at which Apples will be instantiated
     public float secondsBetweenAppleDrops = 1f;
 
     // Start is called before the first frame update
@@ -30,7 +30,7 @@ public class AppleTree : MonoBehaviour
 
     void DropApple()
     {
-        GameObject apple = Instantiate<GameObject>( applePrefab );
+        GameObject apple = Instantiate<GameObject>(applePrefab);
         apple.transform.position = transform.position;
         Invoke("DropApple", secondsBetweenAppleDrops);
     }
@@ -38,7 +38,7 @@ public class AppleTree : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Basic Movement 
+        // Basic Movement
         Vector3 pos = transform.position; // Current position of the apple tree
         pos.x += speed * Time.deltaTime; // Makes movement of tree time based
         transform.position = pos; // It is the variable of position in the transform tab
@@ -52,16 +52,14 @@ public class AppleTree : MonoBehaviour
         {
             speed = -Mathf.Abs(speed);
         }
-      
     }
-    
+
     void FixedUpdate()
     {
         // Changing Direction Randomly is now time-based because of FixedUpdate()
-          if (Random.value < chancetoChangeDirections)
+        if (Random.value < chanceToChangeDirections)
         {
-            speed *= -1;
+            speed *= -1; 
         }
     }
 }
-
