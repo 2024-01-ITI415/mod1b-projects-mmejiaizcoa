@@ -18,15 +18,14 @@ public class Slingshot : MonoBehaviour
     public GameObject projectile;
     public bool aimingMode;
     private Rigidbody projectileRigidbody;
-
-void Awake()
-{
-    Transform launchPointTrans = transform.Find("LaunchPoint");
-    launchPoint = launchPointTrans.gameObject;
-    launchPoint.SetActive(false);
-    launchPos = launchPointTrans.position;
-
-}
+    
+    void Awake()
+    {
+        Transform launchPointTrans = transform.Find("LaunchPoint");
+        launchPoint = launchPointTrans.gameObject;
+        launchPoint.SetActive(false);
+        launchPos = launchPointTrans.position;
+    }
 
     void OnMouseEnter()
     {
@@ -68,7 +67,7 @@ void Awake()
     void Update()
     {
         // If Slingshot  is not in aimingMode, don't run this code 
-        if (!aimMode) return;
+        if (!aimingMode) return;
 
         // Get the current mouse position in 2D Screen coordinates 
         Vector3 mousePos2D = Input.mousePosition;
@@ -97,7 +96,9 @@ void Awake()
             aimingMode = false;
             projectileRigidbody.isKinematic = false;
             projectileRigidbody.velocity = -mouseDelta * velocityMult;
+            FollowCam.POI = projectile;
             projectile = null;
+
         }
 
     }
