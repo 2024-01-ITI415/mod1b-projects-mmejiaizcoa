@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.14919326, g: 0.035224315, b: 0.20755306, a: 1}
+  m_IndirectSpecularColor: {r: 0.21755612, g: 0.065272935, b: 0.295445, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -775,9 +775,9 @@ MonoBehaviour:
   uitButton: {fileID: 1473006856}
   castlePos: {x: 50, y: -9.5, z: 0}
   castles:
-  - {fileID: 6591513234112038317, guid: 1bc9b7a79590cfc46a56b603497eadd1, type: 3}
-  - {fileID: 6591513234112038317, guid: 0341f0df3279f074094500301879a9df, type: 3}
-  - {fileID: 6591513234112038317, guid: 78d8853a4dd727f40aef306eb284df0f, type: 3}
+  - {fileID: 9100547578202065513, guid: 76b5e08bf35225f43bfd213739fd63ff, type: 3}
+  - {fileID: 1180245070104581845, guid: 0341f0df3279f074094500301879a9df, type: 3}
+  - {fileID: 8264535566895591864, guid: 78d8853a4dd727f40aef306eb284df0f, type: 3}
   level: 0
   levelMax: 0
   shotsTaken: 0
@@ -1526,8 +1526,8 @@ LineRenderer:
       atime5: 0
       atime6: 0
       atime7: 0
-      m_Mode: 0
-      m_ColorSpace: -1
+      m_Mode: 1
+      m_ColorSpace: 0
       m_NumColorKeys: 2
       m_NumAlphaKeys: 2
     numCornerVertices: 0
