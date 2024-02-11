@@ -18,18 +18,6 @@ public class FollowCam : MonoBehaviour
         camZ = this.transform.position.z;
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     void FixedUpdate()
     {
         // If there's only one line following an if, it doesn't need braces 
@@ -57,9 +45,6 @@ public class FollowCam : MonoBehaviour
                 {
                     // Return to default view
                     POI = null;
-
-                    // In the next update
-                    return;
                 }
             }
         }

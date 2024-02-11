@@ -15,6 +15,7 @@ public class Slingshot : MonoBehaviour
 
 // fields set dynamically
     [Header ("Set Dynamically")]
+
     public GameObject launchPoint;
     public Vector3 launchPos;
     public GameObject projectile;
@@ -41,13 +42,13 @@ public class Slingshot : MonoBehaviour
 
     void OnMouseEnter()
     {
-        print("Slingshot:OnMouseEnter()");
+        // print("Slingshot : OnMouseEnter()");
         launchPoint.SetActive(true);
     }
 
     void OnMouseExit()
     {
-        print("Slingshot:OnMouseExit()");
+        // print("Slingshot : OnMouseExit()");
         launchPoint.SetActive(false);
 
     }
@@ -67,12 +68,6 @@ public class Slingshot : MonoBehaviour
         projectile.GetComponent<Rigidbody>().isKinematic = true;
         projectileRigidbody = projectile.GetComponent<Rigidbody>();
         projectileRigidbody.isKinematic = true;
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
     }
 
     // Update is called once per frame
@@ -110,6 +105,8 @@ public class Slingshot : MonoBehaviour
             projectileRigidbody.velocity = -mouseDelta * velocityMult;
             FollowCam.POI = projectile;
             projectile = null;
+            MissionDemolition.ShotFired();
+            ProjectileLine.S.poi = projectile;
 
         }
 
