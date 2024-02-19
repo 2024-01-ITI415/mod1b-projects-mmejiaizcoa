@@ -26,11 +26,19 @@ public class PlayerController : MonoBehaviour
     // UI object to display winning text.
     public GameObject winTextObject;
 
+    public Vector3 jump;
+
+    public float jumpForce = 4.0f;
+
+    public bool isGrounded;
+
     // Start is called before the first frame update.
     void Start()
     {
         // Get and store the Rigidbody component attached to the player.
         rb = GetComponent<Rigidbody>();
+
+        jump = new Vector3(0.0f, 4.0f, 0.0f);
 
         // Initialize count to zero.
         count = 0;
@@ -40,6 +48,11 @@ public class PlayerController : MonoBehaviour
 
         // Initially set the win text to be inactive.
         winTextObject.SetActive(false);
+    }
+
+    void OnCollisionStay()
+    {
+        isGrounded = true;
     }
 
     // This function is called when a move input is detected.
@@ -91,6 +104,16 @@ public class PlayerController : MonoBehaviour
         {
             // Display the win text.
             winTextObject.SetActive(true);
+        }
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        {
+
+            rb.AddForce(jump * jumpForce, ForceMode.Impulse);
+            isGrounded = false;
         }
     }
 }
