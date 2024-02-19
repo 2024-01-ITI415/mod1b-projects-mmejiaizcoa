@@ -100,7 +100,7 @@ public class PlayerController : MonoBehaviour
         countText.text = "Count: " + count.ToString() + "/18";
 
         // Check if the count has reached or exceeded the win condition.
-        if (count >= 17)
+        if (count >= 18)
         {
             // Display the win text.
             winTextObject.SetActive(true);
