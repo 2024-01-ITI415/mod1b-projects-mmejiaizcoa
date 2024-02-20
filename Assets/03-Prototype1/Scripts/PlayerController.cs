@@ -28,9 +28,11 @@ public class PlayerController : MonoBehaviour
 
     public Vector3 jump;
 
-    public float jumpForce = 4.0f;
+    public float jumpForce = 3.0f;
 
     public bool isGrounded;
+    private int remainingJumps;
+    public int maxJumps = 0;
 
     // Start is called before the first frame update.
     void Start()
@@ -38,7 +40,7 @@ public class PlayerController : MonoBehaviour
         // Get and store the Rigidbody component attached to the player.
         rb = GetComponent<Rigidbody>();
 
-        jump = new Vector3(0.0f, 4.0f, 0.0f);
+        jump = new Vector3(0.0f, 3.0f, 0.0f);
 
         // Initialize count to zero.
         count = 0;
@@ -48,11 +50,14 @@ public class PlayerController : MonoBehaviour
 
         // Initially set the win text to be inactive.
         winTextObject.SetActive(false);
+
+        remainingJumps = maxJumps;
     }
 
     void OnCollisionStay()
     {
         isGrounded = true;
+        remainingJumps = maxJumps; // Resets jumps when player touches ground
     }
 
     // This function is called when a move input is detected.
@@ -109,11 +114,12 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded && remainingJumps > 0)
         {
 
             rb.AddForce(jump * jumpForce, ForceMode.Impulse);
             isGrounded = false;
+            remainingJumps--;
         }
     }
 }
