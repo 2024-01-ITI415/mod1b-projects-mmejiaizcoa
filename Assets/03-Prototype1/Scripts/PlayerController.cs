@@ -81,7 +81,7 @@ public class PlayerController : MonoBehaviour
         rb.AddForce(movement * speed);
     }
 
-
+    public AudioSource quackSound;
     void OnTriggerEnter(Collider other)
     {
         // Check if the object the player collided with has the "PickUp" tag.
